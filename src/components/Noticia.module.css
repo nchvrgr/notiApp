@@ -1,0 +1,26 @@
+.fuente{
+    background-color: rgba(0, 0, 0, 0.028);
+    padding: 1rem !important;
+    border-radius: 0.5rem;
+    font-size: 0.9rem !important;
+}
+
+.imagen{
+    height: 10em;
+    object-fit: cover;
+}
+
+.texto{
+    min-height: 10em;
+    max-height: 10em;
+}
+
+.card{
+    min-height: 31em;
+}
+
+.title{
+    min-height: 6em;
+    max-height: 6em;
+    object-fit: fill;
+}

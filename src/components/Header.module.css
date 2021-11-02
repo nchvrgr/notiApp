@@ -1,0 +1,15 @@
+.header{
+    background-color: rgba(255, 145, 81, 0.234) !important;
+}
+
+.logo{
+    width: 2em;
+    height: 2em;
+    margin-right: 10.5em;
+    margin-top: 1.3em;
+}
+
+.titulo{
+    display: block;
+    text-align: center;
+}
