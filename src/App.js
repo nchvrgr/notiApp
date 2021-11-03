@@ -5,8 +5,8 @@ import Header from "./components/Header";
 import fetch from 'node-fetch';
 import ListaNoticias from "./components/ListaNoticias";
 import './index.css';
-const API_KEY = process.env.REACT_APP_API_KEY;
-const API_URL = process.env.REACT_APP_API_URL;
+const API_KEY = 'c18fb43629294471b30af9c552ed7c9e';
+const API_URL = 'https://newsapi.org'
 
 const App = () => {
   const [categoria, setCategoria] = useState('');
