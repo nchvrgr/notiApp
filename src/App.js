@@ -17,6 +17,7 @@ const App = () => {
       const url = `${API_URL}/v2/top-headlines?country=ar&category=${categoria}&apiKey=${API_KEY}`;
       const respuesta = await axios.get(url);
       const {data} = await respuesta;
+      console.log(data);
       setNoticias(data.articles);
     };
     consultarAPI();
