@@ -6,32 +6,31 @@ import axios from "axios";
 import ListaNoticias from "./components/ListaNoticias";
 import './index.css';
 
-
-
-const API_KEY = 'c18fb43629294471b30af9c552ed7c9e';
-const API_URL = 'https://newsapi.org';
-
 const App = () => {
   const [categoria, setCategoria] = useState('');
   const [noticias, setNoticias] = useState([]);
+  const [idioma, setIdioma] = useState('es');
 
   useEffect(() => {
     const consultarAPI = async () => {
-      const url = `${API_URL}/v2/top-headlines?country=ar&category=${categoria}&apiKey=${API_KEY}`;
-      const respuesta = await axios.get(url);
+      const respuesta = await axios.get(
+        `https://api.newscatcherapi.com/v2/search?q=all&page_size=9&lang=${idioma}&topic=${categoria}`,
+        {headers: {
+          'x-api-key': 'w-dRmx4mW2ivHZsyF70vjgc7yMsRiDW6Kdnq0CJImCA'
+      }});
       const {data} = await respuesta;
       console.log(data);
       setNoticias(data.articles);
     };
     consultarAPI();
-  }, [categoria]);
+  }, [categoria, idioma]);
 
   return (
     <Fragment>
         <Header titulo="NotiApp"/>
-        <div className="container white">
-          <Formulario setCategoria={setCategoria}/>
-          <ListaNoticias noticias={noticias}/>
+        <div className="container">
+          <Formulario setCategoria={setCategoria} setIdioma={setIdioma} idioma={idioma}/>
+          <ListaNoticias noticias={noticias} idioma={idioma}/>
         </div>
         <footer className="footer">
           <span> 
