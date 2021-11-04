@@ -9,7 +9,6 @@ import './index.css';
 
 
 const API_KEY = 'c18fb43629294471b30af9c552ed7c9e';
-const API_URL = 'https://newsapi.org';
 
 const App = () => {
   const [categoria, setCategoria] = useState('');
