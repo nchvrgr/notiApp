@@ -6,6 +6,8 @@ import axios from "axios";
 import ListaNoticias from "./components/ListaNoticias";
 import './index.css';
 
+
+
 const API_KEY = 'c18fb43629294471b30af9c552ed7c9e';
 const API_URL = 'https://newsapi.org';
 
@@ -15,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     const consultarAPI = async () => {
-      const url = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=ar&category=${categoria}&apiKey=${API_KEY}`;
+      const url = `/v2/top-headlines?country=ar&category=${categoria}&apiKey=${API_KEY}`;
       const respuesta = await axios.get(url);
       const {data} = await respuesta;
       console.log(data);
