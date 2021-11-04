@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import React, { Fragment } from "react/cjs/react.production.min";
 import Formulario from "./components/Formulario";
 import Header from "./components/Header";
-import fetch from 'node-fetch';
+import axios from "axios";
 import ListaNoticias from "./components/ListaNoticias";
 import './index.css';
 const API_KEY = 'c18fb43629294471b30af9c552ed7c9e';
@@ -15,9 +15,8 @@ const App = () => {
   useEffect(() => {
     const consultarAPI = async () => {
       const url = `${API_URL}/v2/top-headlines?country=ar&category=${categoria}&apiKey=${API_KEY}`;
-      const respuesta = await fetch(url);
-      const data = await respuesta.json();
-      console.log(data);
+      const respuesta = await axios.get(url);
+      const {data} = await respuesta;
       setNoticias(data.articles);
     };
     consultarAPI();
